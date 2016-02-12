@@ -3,6 +3,9 @@
  */
 module.exports = function (socket) {
 
+    // TODO: keep track of which users are in which rooms.
+    // TODO: keep track of room messages.
+
     socket.emit('init', {
         message: 'Welcome to the Api socket!'
 
@@ -15,6 +18,8 @@ module.exports = function (socket) {
             room: data.room
         });
 
+        // TODO: get the users in this room and return them to the client
+        // TODO: get previous messages and return them to the client
         fn(data.user + ' JOINED the room named ' + data.room );
 
     });
